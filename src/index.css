@@ -180,10 +180,11 @@ button { color: inherit; }
 .legend { display: flex; align-items: center; gap: 12px; }
 .legend-item { display: flex; align-items: center; gap: 6px; color: #7b8798; font-size: 12px; font-weight: 600; }
 .legend-dot { width: 7px; height: 7px; border-radius: 50%; }
-.radar-wrap { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 24px; align-items: center; min-height: 270px; }
-.radar-wrap > div:first-child { display: grid; place-items: center; padding: 14px; border-radius: 16px; background: linear-gradient(145deg, #f8fbff, #f3f6fb); }
-.metrics-list { display: grid; gap: 13px; }
-.metric-item { padding: 10px 12px; border: 1px solid #edf1f6; border-radius: 11px; background: #fbfcfe; }
+.radar-wrap { display: grid; grid-template-columns: minmax(220px, .72fr) minmax(0, 2fr); gap: 24px; align-items: stretch; }
+.radar-wrap > div:first-child { min-height: 250px; display: grid; place-items: center; padding: 18px; border-radius: 16px; background: linear-gradient(145deg, #f8fbff, #f3f6fb); }
+.radar-wrap > div:first-child svg { max-width: 100%; height: auto; }
+.metrics-list { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.metric-item { min-width: 0; min-height: 0; display: flex; flex-direction: column; justify-content: space-between; padding: 11px 12px; border: 1px solid #edf1f6; border-radius: 12px; background: #fbfcfe; }
 .metric-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 7px; }
 .metric-name { color: #293548; font-size: 13px; font-weight: 750; }
 .metric-right { display: flex; align-items: center; gap: 6px; }
@@ -290,7 +291,9 @@ tbody td { padding: 13px 22px; color: #3e4b5f; font-size: 13px; vertical-align: 
 @media (max-width: 1320px) {
   :root { --right-w: 286px; --sidebar-w: 214px; }
   .mid-row { grid-template-columns: 1fr; }
-  .radar-wrap { grid-template-columns: 210px minmax(0, 1fr); }
+  .radar-wrap { grid-template-columns: minmax(220px, .7fr) minmax(0, 2fr); }
+  .metrics-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .metric-item { min-height: 112px; padding: 14px; }
 }
 
 @media (max-width: 1080px) {
@@ -331,6 +334,7 @@ tbody td { padding: 13px 22px; color: #3e4b5f; font-size: 13px; vertical-align: 
   .card { padding: 18px; }
   .radar-wrap { grid-template-columns: 1fr; }
   .radar-wrap > div:first-child { width: 100%; }
+  .metrics-list { grid-template-columns: 1fr; }
   .donut-legend { grid-template-columns: 1fr; }
   .tbl-hdr { align-items: stretch; flex-direction: column; }
   .tbl-controls { flex-wrap: wrap; }
