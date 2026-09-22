@@ -10,7 +10,6 @@ export default function Metrics() {
     <div className="stats-grid">
       {metrics.map((metric) => (
         <article className={`stat-card stat-${metric.tone}`} key={metric.label}>
-          <span className="stat-accent" aria-hidden="true" />
           <p className="stat-lbl">{metric.label}</p>
           <p className={`stat-val ${metric.danger ? 'danger-text' : ''}`}>
             {metric.value}<span className="stat-unit">{metric.unit}</span>
