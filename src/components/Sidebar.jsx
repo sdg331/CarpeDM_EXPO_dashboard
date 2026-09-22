@@ -1,6 +1,6 @@
 const menuGroups = [
-  { label: 'Overview', items: [['조직 현황', 'menu-org.jpg'], ['역량 분석', 'menu-analysis.jpg']] },
-  { label: 'Management', items: [['구성원', 'menu-members.jpg'], ['훈련 시나리오', 'menu-scenario.jpg'], ['리포트', 'menu-report.jpg']] },
+  { label: '분석', items: [['조직 현황', 'menu-org.jpg'], ['역량 분석', 'menu-analysis.jpg']] },
+  { label: '운영', items: [['구성원', 'menu-members.jpg'], ['훈련 시나리오', 'menu-scenario.jpg'], ['리포트', 'menu-report.jpg']] },
 ];
 
 export default function Sidebar({ activeMenu, onMenuChange }) {
@@ -10,7 +10,7 @@ export default function Sidebar({ activeMenu, onMenuChange }) {
         <div className="sb-mark">C</div>
         <div>
           <div className="sb-name">CarpeDM</div>
-          <div className="sb-role">ADMIN CONSOLE</div>
+          <div className="sb-role">Admin Console</div>
         </div>
       </div>
 

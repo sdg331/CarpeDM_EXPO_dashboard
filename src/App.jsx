@@ -57,34 +57,36 @@ export default function App() {
       <Sidebar activeMenu={activeMenu} onMenuChange={setActiveMenu} />
       <main className="main">
         <section className="center" aria-labelledby="page-title">
-          <header className="pg-header">
-            <div>
-              <p className="pg-eyebrow">Organization Overview</p>
-              <h1 className="pg-title" id="page-title">조직 현황</h1>
-              <p className="pg-desc">팀별 직장 대화 훈련 현황과 4-Fit 역량 변화를 확인하세요.</p>
+          <header className="overview-header">
+            <div className="pg-header">
+              <div>
+                <p className="pg-eyebrow">Organization Overview</p>
+                <h1 className="pg-title" id="page-title">조직 현황</h1>
+                <p className="pg-desc">팀별 직장 대화 훈련 현황과 4-Fit 역량 변화를 한눈에 확인하세요.</p>
+              </div>
+              <div className="pg-actions">
+                <span className="pill-badge">EXPO 시연 데이터</span>
+                <button className="btn btn-light btn-md" type="button" onClick={downloadReport}>리포트 내보내기</button>
+              </div>
             </div>
-            <div className="pg-actions">
-              <span className="pill-badge">EXPO 시연 데이터</span>
-              <button className="btn btn-light btn-md" type="button" onClick={downloadReport}>↑ 리포트 내보내기</button>
+
+            <div className="period-row">
+              <div className="tab-group" role="group" aria-label="조회 기간">
+                {Object.keys(periods).map((days) => (
+                  <button
+                    className={`tab ${period === Number(days) ? 'active' : ''}`}
+                    type="button"
+                    aria-pressed={period === Number(days)}
+                    onClick={() => setPeriod(Number(days))}
+                    key={days}
+                  >
+                    {days}일
+                  </button>
+                ))}
+              </div>
+              <time className="period-date">{periods[period]}</time>
             </div>
           </header>
-
-          <div className="period-row">
-            <div className="tab-group" role="group" aria-label="조회 기간">
-              {Object.keys(periods).map((days) => (
-                <button
-                  className={`tab ${period === Number(days) ? 'active' : ''}`}
-                  type="button"
-                  aria-pressed={period === Number(days)}
-                  onClick={() => setPeriod(Number(days))}
-                  key={days}
-                >
-                  {days}일
-                </button>
-              ))}
-            </div>
-            <time className="period-date">{periods[period]}</time>
-          </div>
 
           <Metrics />
           <div className="mid-row">

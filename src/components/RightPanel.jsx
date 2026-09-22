@@ -7,12 +7,12 @@ const actions = [
 export default function RightPanel({ onAction }) {
   return (
     <aside className="right-panel" aria-labelledby="action-title">
-      <div>
+      <div className="right-panel-head">
         <p className="rp-eyebrow">Action Center</p>
         <div className="rp-title-row"><h2 className="rp-title" id="action-title">확인할 항목</h2><span className="cnt-badge">3</span></div>
         <p className="rp-meta">관리자가 우선 살펴볼 사항</p>
       </div>
-      <div className="rp-card">
+      <div className="rp-card panel-card">
         {actions.map((action) => (
           <button className="act-item" type="button" onClick={() => onAction(`${action.name} 상세 화면은 다음 연동 단계에서 제공됩니다.`)} key={action.name}>
             <span className="act-icon"><img src={`/images/${action.image}`} alt="" /></span>
@@ -22,7 +22,7 @@ export default function RightPanel({ onAction }) {
         ))}
       </div>
       <button className="view-all" type="button" onClick={() => onAction('전체 확인 항목 화면은 다음 연동 단계에서 제공됩니다.')}>전체 항목 보기 ›</button>
-      <div className="sum-card">
+      <div className="sum-card panel-card">
         <h2 className="sum-title">이번 주 요약</h2>
         <div className="sum-row"><span className="sum-key">신규 세션</span><span className="sum-val">+42회</span></div>
         <div className="sum-row"><span className="sum-key">평균 점수</span><span className="sum-val pos">↑ 83.2</span></div>

@@ -6,7 +6,7 @@ export default function TrainingProgress() {
           <div className="card-title">훈련 진행</div>
           <div className="card-sub">등록 구성원 기준</div>
         </div>
-        <span style={{ fontSize: '14px', color: 'var(--muted)', cursor: 'pointer' }}>···</span>
+        <span className="card-menu" aria-hidden="true">···</span>
       </div>
 
       <div className="donut-wrap">
@@ -28,25 +28,25 @@ export default function TrainingProgress() {
           </div>
         </div>
         
-        <div className="donut-legend" style={{ width: '100%', display: 'flex', justifyContent: 'space-between', padding: '0 10px', marginBottom: '24px' }}>
-          <div className="donut-legend-item" style={{ flexDirection: 'column', gap: '4px', alignItems: 'flex-start' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><span className="d-dot" style={{ background: 'var(--primary)' }}></span>완료</div>
-            <span className="d-count" style={{ fontSize: '16px' }}>78명</span>
+        <div className="donut-legend">
+          <div className="donut-legend-item">
+            <div className="donut-label"><span className="d-dot" style={{ background: 'var(--primary)' }}></span>완료</div>
+            <span className="d-count">78명</span>
           </div>
-          <div className="donut-legend-item" style={{ flexDirection: 'column', gap: '4px', alignItems: 'flex-start' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><span className="d-dot" style={{ background: '#93c4fc' }}></span>진행 중</div>
-            <span className="d-count" style={{ fontSize: '16px' }}>4명</span>
+          <div className="donut-legend-item">
+            <div className="donut-label"><span className="d-dot" style={{ background: '#93c4fc' }}></span>진행 중</div>
+            <span className="d-count">4명</span>
           </div>
-          <div className="donut-legend-item" style={{ flexDirection: 'column', gap: '4px', alignItems: 'flex-start' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><span className="d-dot" style={{ background: 'var(--border)' }}></span>미시작</div>
-            <span className="d-count" style={{ fontSize: '16px' }}>2명</span>
+          <div className="donut-legend-item">
+            <div className="donut-label"><span className="d-dot" style={{ background: 'var(--border-strong)' }}></span>미시작</div>
+            <span className="d-count">2명</span>
           </div>
         </div>
 
-        <div className="insight-box" style={{ width: '100%', alignItems: 'center', background: 'var(--surface)', borderRadius: 'var(--r-md)', padding: '16px', gap: '14px' }}>
+        <div className="insight-box">
           <img src="/images/insight-bulb.png" className="insight-icon" alt="" />
-          <div className="insight-text" style={{ flex: 1, color: 'var(--fg)' }}>
-            <div style={{ fontWeight: 700, color: 'var(--primary)', marginBottom: '2px' }}>이번 기간 인사이트</div>
+          <div className="insight-text">
+            <div className="insight-title">이번 기간 인사이트</div>
             기획팀의 참여율이 11%p 증가하였습니다.
           </div>
         </div>

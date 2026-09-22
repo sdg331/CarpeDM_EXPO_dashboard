@@ -1,4 +1,11 @@
 export default function RadarChart() {
+  const metrics = [
+    { name: 'Response', score: 85, delta: 4, description: '조직 평균 / 목표 100' },
+    { name: 'Voice', score: 81, delta: 3, description: '조직 달성 / 목표 100' },
+    { name: 'Expression', score: 79, delta: 5, description: '조직 달성 / 목표 100' },
+    { name: 'Posture', score: 87, delta: 2, description: '조직 달성 / 목표 100' },
+  ];
+
   return (
     <div className="card">
       <div className="card-hdr">
@@ -42,53 +49,21 @@ export default function RadarChart() {
         </div>
         
         <div className="metrics-list">
-          <div className="metric-row">
-            <div>
-              <div className="metric-name">Response</div>
-              <div className="metric-bench">조직 평균 / 목표 100</div>
+          {metrics.map((metric) => (
+            <div className="metric-item" key={metric.name}>
+              <div className="metric-row">
+                <div>
+                  <div className="metric-name">{metric.name}</div>
+                  <div className="metric-bench">{metric.description}</div>
+                </div>
+                <div className="metric-right">
+                  <div className="metric-score">{metric.score}</div>
+                  <div className="metric-delta pos">+{metric.delta}</div>
+                </div>
+              </div>
+              <div className="prog-bar"><div className="prog-fill" style={{ width: `${metric.score}%` }} /></div>
             </div>
-            <div className="metric-right">
-              <div className="metric-score">85</div>
-              <div className="metric-delta pos">+4</div>
-            </div>
-          </div>
-          <div className="prog-bar"><div className="prog-fill" style={{ width: '85%' }}></div></div>
-          
-          <div className="metric-row" style={{ marginTop: '16px' }}>
-            <div>
-              <div className="metric-name">Voice</div>
-              <div className="metric-bench">조직 달성 / 목표 100</div>
-            </div>
-            <div className="metric-right">
-              <div className="metric-score">81</div>
-              <div className="metric-delta pos">+3</div>
-            </div>
-          </div>
-          <div className="prog-bar"><div className="prog-fill" style={{ width: '81%' }}></div></div>
-          
-          <div className="metric-row" style={{ marginTop: '16px' }}>
-            <div>
-              <div className="metric-name">Expression</div>
-              <div className="metric-bench">조직 달성 / 목표 100</div>
-            </div>
-            <div className="metric-right">
-              <div className="metric-score">79</div>
-              <div className="metric-delta pos">+5</div>
-            </div>
-          </div>
-          <div className="prog-bar"><div className="prog-fill" style={{ width: '79%' }}></div></div>
-          
-          <div className="metric-row" style={{ marginTop: '16px' }}>
-            <div>
-              <div className="metric-name">Posture</div>
-              <div className="metric-bench">조직 달성 / 목표 100</div>
-            </div>
-            <div className="metric-right">
-              <div className="metric-score">87</div>
-              <div className="metric-delta pos">+2</div>
-            </div>
-          </div>
-          <div className="prog-bar"><div className="prog-fill" style={{ width: '87%' }}></div></div>
+          ))}
         </div>
       </div>
     </div>
